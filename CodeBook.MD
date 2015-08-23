@@ -15,5 +15,18 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 * test/y_test.txt - Test labels.
 * train/subject_train.txt - Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
 
+#### Data Trasformation 
+Step 1 - Read and merge x_train with x_test, y_train with y_test, and subject_train with subject_test using rbind()
+
+Step 2 - Subset data based on columns with features having mean() and std(). Column names are then formated by removing "()", capitalizing M and S (in mean and std) and removing hyphens.
+
+Step 3 - Based on activity values, values are replaced with descriptive activiy lables from activitiy_lables.txt. The column name is renamed activity.
+
+Step 4 - Column containing subject is renamed "subject". All data is joined into one large data table using cbind().
+
+Step 5 - Calculates the average of each variable for each activity and each subject using plyr funcation. Write.table() is used to create an independent tidy dataset of the averages
+
+
+
 
 
